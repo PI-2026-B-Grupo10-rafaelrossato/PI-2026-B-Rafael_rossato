@@ -1,12 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Sobre-Nós</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação Financeira e Fiscal | Sobre Nós</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #102b46;
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 17px;
+            color: #cbd5e1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .sobre {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px #00000010;
+        }
+
+        .sobre h2 {
+            color: #102b46;
+            margin-bottom: 15px;
+        }
+
+        .sobre p {
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .integrantes h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #102b46;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #00000010;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #102b46;
+        }
+
+        .card a {
+            display: inline-block;
+            background: #1769aa;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            background: #0d4778;
+        }
+
+        footer {
+            background: #102b46;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>sobre-nós</h1>
+    <header>
+        <h1>Educação Financeira e Fiscal</h1>
+        <p>Macroárea: Economia</p>
+    </header>
+
+    <main class="container">
+
+        <section class="sobre">
+            <h2>Sobre o Projeto</h2>
+
+            <p>
+                A educação financeira e fiscal é fundamental para
+                compreender como administrar o dinheiro e entender
+                a importância dos impostos na sociedade.
+
+                Neste projeto, buscamos apresentar conhecimentos
+                sobre planejamento financeiro, consumo consciente,
+                organização econômica e cidadania fiscal,
+                mostrando como esses assuntos fazem parte
+                do nosso cotidiano.
+            </p>
+        </section>
+
+        <section class="integrantes">
+            <h2>Conheça nossos integrantes</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Rafael</h3>
+                    <a href="LINK_DO_SEU_SITE" target="_blank">
+                        Acessar site
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3>Diego</h3>
+                    <a href="LINK_DO_SITE_DO_DIEGO" target="_blank">
+                        Acessar site
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3>Eduardo</h3>
+                    <a href="LINK_DO_SITE_DO_EDUARDO" target="_blank">
+                        Acessar site
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Projeto Escolar - Educação Financeira e Fiscal</p>
+    </footer>
 
 </body>
 </html>
