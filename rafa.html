@@ -6,10 +6,18 @@
     <title>Rafael Rossato — Sobre Mim</title>
 
     <style>
-        .midia img {
+       .midia img {
     width: 100%;
     max-width: 420px;
+    height: auto;
+    object-fit: cover;
     border-radius: 12px;
+}
+
+.grade-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
 }
         :root {
             --fundo: #f5f7fb;
