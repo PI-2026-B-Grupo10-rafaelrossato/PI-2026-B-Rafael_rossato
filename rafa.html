@@ -3,22 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo Piesson Beppler — Sobre Mim</title>
+    <title>Rafael Rossato — Sobre Mim</title>
+
     <style>
-
-        .midia img {
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.grade-fotos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
-}
         :root {
             --fundo: #f5f7fb;
             --cartao: #ffffff;
@@ -37,13 +24,15 @@
             --borda: #383c50;
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             margin: 0;
             background: var(--fundo);
             color: var(--texto);
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             line-height: 1.7;
         }
 
@@ -55,6 +44,7 @@
         header {
             position: sticky;
             top: 0;
+            z-index: 10;
             border-bottom: 1px solid var(--borda);
             background: var(--cartao);
         }
@@ -64,6 +54,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 12px;
         }
 
         nav a {
@@ -77,7 +68,8 @@
             gap: 8px;
         }
 
-        button, .botao {
+        button,
+        .botao {
             min-height: 40px;
             padding: 8px 12px;
             border: 1px solid var(--borda);
@@ -106,6 +98,7 @@
         h1 {
             margin: 10px 0 8px;
             font-size: clamp(38px, 7vw, 58px);
+            line-height: 1.1;
         }
 
         .subtitulo {
@@ -128,6 +121,21 @@
             margin-top: 0;
             color: var(--principal);
             font-size: 22px;
+        }
+
+        .galeria-fotos {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .galeria-fotos img {
+            display: block;
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 12px;
         }
 
         .local {
@@ -156,10 +164,19 @@
 
             .controles {
                 width: 100%;
+                flex-wrap: wrap;
             }
 
             article {
                 padding: 20px;
+            }
+
+            .galeria-fotos {
+                grid-template-columns: 1fr;
+            }
+
+            .galeria-fotos img {
+                height: 260px;
             }
         }
     </style>
@@ -167,67 +184,90 @@
 
 <body>
     <header>
-        <nav class="container">
+        <nav class="container" aria-label="Navegação da página">
             <a href="index.html">← Voltar ao projeto</a>
+
             <div class="controles">
-                <a class="botao" href="en/sobre-eduardo-piesson-beppler.html"
-                   lang="en">English</a>
+                <a class="botao" href="en/sobre-rafael-rossato.html" lang="en">
+                    English
+                </a>
+
                 <button id="botao-tema" type="button"
-                        aria-label="Ativar modo escuro">🌙</button>
+                        aria-label="Ativar modo escuro">
+                    🌙
+                </button>
             </div>
         </nav>
     </header>
 
     <section class="apresentacao container">
         <div class="marcador">Integrante do Grupo 10</div>
-        <h1>Eduardo Piesson Beppler</h1>
-        <p class="subtitulo">Minha trajetória, minha cidade e meus objetivos.</p>
+        <h1>Rafael Rossato</h1>
+        <p class="subtitulo">
+            Minha trajetória, minha cidade e meus próximos passos.
+        </p>
     </section>
 
-    <article class="midia">
+    <article class="midia container">
         <h2>Fotos</h2>
-        <div class="grade-fotos">
-            <img src="IMG-20261126-WA0087.jpg"
-                 alt="Primeira imagem de Rafael">
-            <img src="assets/img/137090042_2169148933221175_3242220732553763313_n.gif"
-                 alt="Segunda imagem de Rafael">
+
+        <div class="galeria-fotos">
+            <img src="v2_0002f41d-3ac6-479c-b8ba-b1ffc5a770c2.jpg"
+                 alt="Rafael">
+
+            <img src="images (27).jpeg"
+                 alt="Paisagem de São José das Palmeiras">
+        </div>
+    </article>
 
     <main class="container">
         <article>
             <h2>Sobre mim</h2>
             <p>
-                Meu nome é <strong>Eduardo Piesson Beppler</strong>. Sou integrante
-                do <strong>Grupo 10</strong> do Projeto Integrador do IFPR e moro em
-                Toledo, no Paraná.
+                Meu nome é <strong>Rafael Rossato</strong>. Sou integrante do
+                <strong>Grupo 10</strong> do Projeto Integrador do IFPR e moro em
+                <strong>São José das Palmeiras — Paraná</strong>.
+            </p>
+            <p>
+                Neste projeto, estudo como a educação financeira e fiscal pode ajudar
+                as pessoas a planejar seus gastos, evitar desperdícios e tomar decisões
+                mais responsáveis.
             </p>
         </article>
 
         <article>
             <h2>Minha trajetória escolar</h2>
             <p>
-                Sou estudante do Instituto Federal do Paraná e venho construindo minha
-                trajetória por meio das experiências escolares, da convivência com
-                colegas e professores e da participação em projetos educacionais.
+                Sou estudante do <strong>Instituto Federal do Paraná (IFPR)</strong>
+                e venho construindo minha trajetória por meio das experiências
+                escolares, da convivência com colegas e professores e da participação
+                em projetos educacionais.
             </p>
         </article>
 
         <article>
             <h2>Um fato importante da minha trajetória</h2>
             <p>
-                Participar do Projeto Integrador tem sido uma oportunidade para
-                desenvolver conhecimentos e compreender melhor a relação entre
+                Fazer parte de um Projeto Integrador tem sido uma oportunidade para
+                desenvolver meus conhecimentos e compreender melhor a relação entre
                 educação, economia e sociedade.
             </p>
         </article>
 
         <article>
             <h2>Onde vivo</h2>
-            <span class="local">Jardim Coopagro — Toledo — PR</span>
+            <span class="local">Bairro Centro — São José das Palmeiras — PR</span>
+
             <p>
-                Toledo está localizada no Oeste do Paraná e possui economia relacionada
-                à agroindústria, à agricultura, ao comércio e aos serviços. A organização
-                financeira é importante para famílias, produtores rurais e pequenos
-                negócios da região.
+                São José das Palmeiras está localizada na região Oeste do Paraná.
+                Segundo o Censo de 2022 do <strong>IBGE</strong>, o município possui
+                <strong>3.957 habitantes</strong>.
+            </p>
+            <p>
+                Sua economia está relacionada à agropecuária, à agricultura, ao comércio
+                e aos serviços. Por isso, o planejamento financeiro é importante tanto
+                para famílias e trabalhadores quanto para produtores rurais e pequenos
+                comerciantes.
             </p>
         </article>
 
@@ -235,31 +275,47 @@
             <h2>Momento atual e perspectivas futuras</h2>
             <p>
                 Atualmente, estudo no IFPR e participo do Projeto Integrador sobre
-                educação financeira e fiscal. Pretendo continuar aprendendo e adquirir
-                conhecimentos que contribuam para minhas escolhas pessoais e profissionais.
+                educação financeira e fiscal. Estou aprendendo a relacionar
+                conhecimentos escolares com situações reais da vida cotidiana.
+            </p>
+            <p>
+                Pretendo continuar estudando e adquirindo conhecimentos que possam
+                contribuir para a organização da minha vida pessoal e para o
+                fortalecimento da comunidade onde vivo.
             </p>
         </article>
     </main>
 
     <footer>
-        <div class="container">Grupo 10 — Projeto Integrador IFPR 2026</div>
+        <div class="container">
+            Grupo 10 — Projeto Integrador IFPR 2026
+        </div>
     </footer>
 
     <script>
-        const botao = document.getElementById("botao-tema");
+        const botaoTema = document.getElementById("botao-tema");
         const raiz = document.documentElement;
 
         function aplicarTema(tema) {
             raiz.dataset.tema = tema;
-            botao.textContent = tema === "escuro" ? "☀️" : "🌙";
+            botaoTema.textContent = tema === "escuro" ? "☀️" : "🌙";
+            botaoTema.setAttribute(
+                "aria-label",
+                tema === "escuro"
+                    ? "Ativar modo claro"
+                    : "Ativar modo escuro"
+            );
         }
 
-        aplicarTema(localStorage.getItem("tema-site") || "claro");
+        const temaSalvo = localStorage.getItem("tema-site");
+        aplicarTema(temaSalvo === "escuro" ? "escuro" : "claro");
 
-        botao.addEventListener("click", () => {
-            const novo = raiz.dataset.tema === "escuro" ? "claro" : "escuro";
-            aplicarTema(novo);
-            localStorage.setItem("tema-site", novo);
+        botaoTema.addEventListener("click", () => {
+            const novoTema =
+                raiz.dataset.tema === "escuro" ? "claro" : "escuro";
+
+            aplicarTema(novoTema);
+            localStorage.setItem("tema-site", novoTema);
         });
     </script>
 </body>
