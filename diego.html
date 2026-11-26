@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diego Nunes Ribeiro De Paulo — Sobre Mim</title>
     <style>
-        .midia img {
+       .midia img {
     width: 100%;
     max-width: 420px;
+    height: auto;
+    object-fit: cover;
     border-radius: 12px;
+}
+
+.grade-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
 }
         :root {
             --fundo: #f5f7fb;
