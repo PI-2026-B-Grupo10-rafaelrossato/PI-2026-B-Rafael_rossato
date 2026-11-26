@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Rossato — Sobre Mim</title>
+
+    <style>
+        :root {
+            --fundo: #f5f7fb;
+            --cartao: #ffffff;
+            --texto: #20253a;
+            --suave: #687087;
+            --principal: #5b48c7;
+            --claro: #eeeaff;
+            --borda: #e1e4ec;
+        }
+
+        [data-tema="escuro"] {
+            --fundo: #171927;
+            --cartao: #222638;
+            --texto: #f5f6ff;
+            --suave: #bec3d4;
+            --principal: #ab9cff;
+            --claro: #393450;
+            --borda: #383c50;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--fundo);
+            color: var(--texto);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: min(980px, calc(100% - 32px));
+            margin: auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid var(--borda);
+            background: var(--cartao);
+        }
+
+        nav {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        nav a,
+        article a {
+            color: var(--principal);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .controles {
+            display: flex;
+            gap: 8px;
+        }
+
+        button,
+        .botao {
+            min-height: 40px;
+            padding: 8px 12px;
+            border: 1px solid var(--borda);
+            border-radius: 8px;
+            background: var(--cartao);
+            color: var(--texto);
+            font: inherit;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .apresentacao {
+            padding: 58px 0 30px;
+            text-align: center;
+        }
+
+        .marcador {
+            display: inline-block;
+            color: var(--principal);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .apresentacao h1 {
+            margin: 10px 0 8px;
+            font-size: clamp(42px, 8vw, 68px);
+            line-height: 1;
+        }
+
+        .subtitulo {
+            color: var(--suave);
+        }
+
+        main {
+            padding-bottom: 55px;
+        }
+
+        .card {
+            display: grid;
+            grid-template-columns: 58px 1fr;
+            gap: 18px;
+            margin: 18px 0;
+            padding: 26px;
+            border: 1px solid var(--borda);
+            border-radius: 18px;
+            background: var(--cartao);
+            box-shadow: 0 10px 28px rgba(50, 55, 90, 0.06);
+            opacity: 0;
+            transform: translateY(24px);
+            cursor: pointer;
+            animation: surgir 0.55s ease forwards;
+            transition: transform 0.25s ease,
+                        border-color 0.25s ease,
+                        box-shadow 0.25s ease,
+                        background 0.25s ease;
+        }
+
+        .card:nth-of-type(2) { animation-delay: 0.10s; }
+        .card:nth-of-type(3) { animation-delay: 0.20s; }
+        .card:nth-of-type(4) { animation-delay: 0.30s; }
+        .card:nth-of-type(5) { animation-delay: 0.40s; }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--principal);
+            box-shadow: 0 16px 34px rgba(50, 55, 90, 0.12);
+        }
+
+        .card.ativo {
+            border-color: var(--principal);
+            background: var(--claro);
+            transform: scale(1.015);
+            box-shadow: 0 16px 38px rgba(91, 72, 199, 0.16);
+        }
+
+        .icone {
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            background: var(--claro);
+            font-size: 26px;
+            transition: transform 0.25s ease;
+        }
+
+        .card:hover .icone,
+        .card.ativo .icone {
+            transform: rotate(-8deg) scale(1.08);
+        }
+
+        .card h2 {
+            margin: 0 0 10px;
+            color: var(--principal);
+            font-size: 22px;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .local {
+            display: inline-block;
+            margin: 2px 0 12px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: var(--claro);
+            color: var(--principal);
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 22px 0;
+            border-top: 1px solid var(--borda);
+            color: var(--suave);
+            text-align: center;
+        }
+
+        @keyframes surgir {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 560px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px 0;
+            }
+
+            .controles {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .apresentacao {
+                padding-top: 42px;
+            }
+
+            .card {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .icone {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .card {
+                opacity: 1;
+                transform: none;
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container" aria-label="Navegação da página">
+            <a href="index.html">← Voltar ao projeto</a>
+
+            <div class="controles">
+                <a class="botao" href="en/sobre-rafael-rossato.html" lang="en">
+                    English
+                </a>
+
+                <button id="botao-tema" type="button"
+                        aria-label="Ativar modo escuro">
+                    🌙
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="apresentacao container">
+        <div class="marcador">Integrante do Grupo 10</div>
+        <h1>Rafael Rossato</h1>
+        <p class="subtitulo">
+            Minha trajetória, minha cidade e meus próximos passos.
+        </p>
+    </section>
+
+     <article class="midia">
+        <h2>Fotos</h2>
+        <div class="grade-fotos">
+            <img src="assets/img/rafael-1.jpg"
+                 alt="Primeira imagem de Rafael">
+            <img src="assets/img/rafael-2.jpg"
+                 alt="Segunda imagem de Rafael">
+
+    <main class="container">
+        <article class="card card-destaque">
+            <div class="icone" aria-hidden="true">👋</div>
+            <div>
+                <h2>Sobre mim</h2>
+                <p>
+                    Meu nome é <strong>Rafael Rossato</strong>. Sou integrante do
+                    <strong>Grupo 10</strong> do Projeto Integrador do IFPR e moro em
+                    <strong>São José das Palmeiras — Paraná</strong>.
+                </p>
+                <p>
+                    Neste projeto, estudo como a educação financeira e fiscal pode ajudar
+                    as pessoas a planejar seus gastos, evitar desperdícios e tomar decisões
+                    mais responsáveis.
+                </p>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="icone" aria-hidden="true">📚</div>
+            <div>
+                <h2>Minha trajetória escolar</h2>
+                <p>
+                    Sou estudante do <strong>Instituto Federal do Paraná (IFPR)</strong>
+                    e venho construindo minha trajetória por meio das experiências
+                    escolares, da convivência com colegas e professores e da participação
+                    em projetos educacionais.
+                </p>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="icone" aria-hidden="true">⭐</div>
+            <div>
+                <h2>Um fato importante da minha trajetória</h2>
+                <p>
+                    Fazer parte de um Projeto Integrador tem sido uma oportunidade para
+                    desenvolver meus conhecimentos e compreender melhor a relação entre
+                    educação, economia e sociedade.
+                </p>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="icone" aria-hidden="true">📍</div>
+            <div>
+                <h2>Onde vivo</h2>
+                <span class="local">Bairro Centro — São José das Palmeiras — PR</span>
+
+                <p>
+                    São José das Palmeiras está localizada na região Oeste do Paraná.
+                    Segundo o Censo de 2022 do <strong>IBGE</strong>, o município possui
+                    <strong>3.957 habitantes</strong>.
+                </p>
+                <p>
+                    Sua economia está relacionada à agropecuária, à agricultura, ao comércio
+                    e aos serviços. Por isso, o planejamento financeiro é importante tanto
+                    para famílias e trabalhadores quanto para produtores rurais e pequenos
+                    comerciantes.
+                </p>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="icone" aria-hidden="true">🚀</div>
+            <div>
+                <h2>Momento atual e perspectivas futuras</h2>
+                <p>
+                    Atualmente, estudo no IFPR e participo do Projeto Integrador sobre
+                    educação financeira e fiscal. Estou aprendendo a relacionar
+                    conhecimentos escolares com situações reais da vida cotidiana.
+                </p>
+                <p>
+                    Pretendo continuar estudando e adquirindo conhecimentos que possam
+                    contribuir para a organização da minha vida pessoal e para o
+                    fortalecimento da comunidade onde vivo.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            Grupo 10 — Projeto Integrador IFPR 2026
+        </div>
+    </footer>
+
+    <script>
+        const botaoTema = document.getElementById("botao-tema");
+        const raiz = document.documentElement;
+
+        function aplicarTema(tema) {
+            raiz.dataset.tema = tema;
+            botaoTema.textContent = tema === "escuro" ? "☀️" : "🌙";
+            botaoTema.setAttribute(
+                "aria-label",
+                tema === "escuro"
+                    ? "Ativar modo claro"
+                    : "Ativar modo escuro"
+            );
+        }
+
+        const temaSalvo = localStorage.getItem("tema-site");
+        aplicarTema(temaSalvo === "escuro" ? "escuro" : "claro");
+
+        botaoTema.addEventListener("click", () => {
+            const novoTema =
+                raiz.dataset.tema === "escuro" ? "claro" : "escuro";
+
+            aplicarTema(novoTema);
+            localStorage.setItem("tema-site", novoTema);
+        });
+
+        document.querySelectorAll(".card").forEach((card) => {
+            card.addEventListener("click", () => {
+                document.querySelectorAll(".card").forEach((item) => {
+                    item.classList.remove("ativo");
+                });
+
+                card.classList.add("ativo");
+            });
+        });
+    </script>
+</body>
+</html>
