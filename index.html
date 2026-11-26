@@ -3,175 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educação Financeira e Fiscal | Sobre Nós</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f1f5f9;
-            color: #1e293b;
-        }
-
-        header {
-            background: #102b46;
-            color: white;
-            text-align: center;
-            padding: 65px 20px;
-        }
-
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-
-        header p {
-            font-size: 17px;
-            color: #cbd5e1;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        .sobre {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 12px #00000010;
-        }
-
-        .sobre h2 {
-            color: #102b46;
-            margin-bottom: 15px;
-        }
-
-        .sobre p {
-            line-height: 1.7;
-            font-size: 16px;
-        }
-
-        .integrantes h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #102b46;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px #00000010;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            color: #102b46;
-        }
-
-        .card a {
-            display: inline-block;
-            background: #1769aa;
-            color: white;
-            text-decoration: none;
-            padding: 12px 22px;
-            border-radius: 7px;
-            transition: 0.3s;
-        }
-
-        .card a:hover {
-            background: #0d4778;
-        }
-
-        footer {
-            background: #102b46;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+    <meta name="description"
+          content="Projeto Integrador sobre educação financeira e fiscal do Grupo 10">
+    <title>Grupo 10 — Educação Financeira e Fiscal</title>
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
-
 <body>
+    <header class="cabecalho">
+        <nav class="menu" aria-label="Menu principal">
+            <a class="marca" href="index.html">Grupo 10</a>
 
-    <header>
-        <h1>Educação Financeira e Fiscal</h1>
-        <p>Macroárea: Economia</p>
+            <div class="menu-links">
+                <a href="#projeto">Projeto</a>
+                <a href="#integrantes">Integrantes</a>
+                <a href="#tema">Tema transversal</a>
+            </div>
+
+            <div class="acoes-menu">
+                <a class="botao-traducao"
+                   href="en/index.html"
+                   lang="en"
+                   aria-label="Ver página em inglês">
+                    English
+                </a>
+
+                <button class="botao-tema"
+                        id="botao-tema"
+                        type="button"
+                        aria-pressed="false">
+                    <span aria-hidden="true">🌙</span>
+                    <span class="texto-tema">Modo escuro</span>
+                </button>
+            </div>
+        </nav>
     </header>
 
-    <main class="container">
-
-        <section class="sobre">
-            <h2>Sobre o Projeto</h2>
-
-            <p>
-                A educação financeira e fiscal é fundamental para
-                compreender como administrar o dinheiro e entender
-                a importância dos impostos na sociedade.
-
-                Neste projeto, buscamos apresentar conhecimentos
-                sobre planejamento financeiro, consumo consciente,
-                organização econômica e cidadania fiscal,
-                mostrando como esses assuntos fazem parte
-                do nosso cotidiano.
+    <main>
+        <section class="secao destaque" id="projeto">
+            <p class="rotulo">Projeto Integrador — IFPR 2026</p>
+            <h1>Educação financeira e fiscal</h1>
+            <p class="descricao">
+                Projeto desenvolvido pelo Grupo 10 com o objetivo de aproximar
+                os estudantes de assuntos relacionados ao planejamento financeiro,
+                ao consumo consciente, aos tributos e à responsabilidade cidadã.
             </p>
+            <a class="botao-principal" href="#integrantes">
+                Conhecer os integrantes
+            </a>
         </section>
 
-        <section class="integrantes">
-            <h2>Conheça nossos integrantes</h2>
+        <section class="secao" id="integrantes">
+            <p class="rotulo">Nossa equipe</p>
+            <h2>Integrantes do grupo</h2>
 
-            <div class="cards">
-
-                <div class="card">
-                    <h3>Rafael</h3>
-                    <a href="LINK_DO_SEU_SITE" target="_blank">
-                        Acessar site
+            <div class="grade-cards">
+                <article class="card">
+                    <h3>Rafael Rossato</h3>
+                    <p>
+                        Estudante do IFPR, residente em São José das Palmeiras,
+                        no bairro Centro.
+                    </p>
+                    <a class="link-card"
+                       href="sobre-rafael-rossato.html"
+                       aria-label="Conhecer a página pessoal de Rafael Rossato">
+                        Conhecer Rafael →
                     </a>
-                </div>
+                </article>
 
-                <div class="card">
-                    <h3>Diego</h3>
-                    <a href="LINK_DO_SITE_DO_DIEGO" target="_blank">
-                        Acessar site
+                <article class="card">
+                    <h3>Diego Nunes Ribeiro De Paulo</h3>
+                    <p>
+                        Estudante do IFPR, residente em Manaus,
+                        no bairro Adrianópolis.
+                    </p>
+                    <a class="link-card"
+                       href="sobre-diego-nunes-ribeiro-de-paulo.html"
+                       aria-label="Conhecer a página pessoal de Diego Nunes Ribeiro De Paulo">
+                        Conhecer Diego →
                     </a>
-                </div>
+                </article>
 
-                <div class="card">
-                    <h3>Eduardo</h3>
-                    <a href="LINK_DO_SITE_DO_EDUARDO" target="_blank">
-                        Acessar site
+                <article class="card">
+                    <h3>Eduardo Piesson Beppler</h3>
+                    <p>
+                        Estudante do IFPR, residente em Toledo,
+                        no bairro Jardim Coopagro.
+                    </p>
+                    <a class="link-card"
+                       href="sobre-eduardo-piesson-beppler.html"
+                       aria-label="Conhecer a página pessoal de Eduardo Piesson Beppler">
+                        Conhecer Eduardo →
                     </a>
-                </div>
-
+                </article>
             </div>
         </section>
 
+        <section class="secao" id="tema">
+            <p class="rotulo">Tema transversal</p>
+            <h2>Educação financeira e fiscal</h2>
+
+            <div class="conteudo-tema">
+                <article>
+                    <h3>O que é?</h3>
+                    <p>
+                        A educação financeira ensina a planejar gastos, controlar
+                        receitas, poupar e tomar decisões conscientes. A educação
+                        fiscal ajuda a compreender impostos, tributos, notas fiscais
+                        e a importância dos recursos públicos.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Objetivo geral</h3>
+                    <p>
+                        Desenvolver conhecimento sobre planejamento financeiro,
+                        responsabilidade fiscal e consumo consciente, relacionando
+                        esses assuntos à vida cotidiana e à comunidade.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Importância</h3>
+                    <p>
+                        Entender como administrar recursos pessoais e compreender
+                        a função dos tributos contribui para escolhas mais seguras,
+                        organização financeira e participação cidadã.
+                    </p>
+                </article>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>Projeto Escolar - Educação Financeira e Fiscal</p>
+    <footer class="rodape">
+        <p>Grupo 10 — Economia — Projeto Integrador IFPR 2026</p>
     </footer>
-
 </body>
 </html>
